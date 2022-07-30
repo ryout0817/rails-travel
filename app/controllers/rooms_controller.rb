@@ -1,21 +1,18 @@
 class RoomsController < ApplicationController
   def index
     @rooms = Room.all
-    @user = User.all
+    @user = current_user
   end
 
   def new
+    @user = current_user
     @room = Room.new  
   end
 
   def create
     @room = Room.new(params.require(:room).permit(:room_name, :room_introduction, :price, :city))
-    @user_id = current_user.id
     if @room.save
       redirect_to room_path(@room.id)
-      
-      binding.pry
-      
     else
       render "new"
     end
@@ -23,11 +20,8 @@ class RoomsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-  end
-
-  def edit
-    @room = Room.find(params[:id])
+    @user = current_user
+    @rooms = current_user
   end
 
   def update

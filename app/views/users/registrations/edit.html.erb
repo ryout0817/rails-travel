@@ -1,75 +1,45 @@
-<%= render 'shared/header', user: @user %>
-  <div class="column">
-    <div class="user-nav user-navi-pc d-block">
-      <ul>
-        <li class="active"><%= link_to 'アカウント', top_path(@user) %></li>
-        <li class="active"><%= link_to 'プロフィール', edit_user_registration_path %> </li>
-      </ul>
-    </div>
-    <div class="col-md-10 acount-view">
-      <div class="acount-view-box">
-        <div class="update-content">
-          <div class="column">
-            <h5>プロフィール</h5>
-          </div>
+
+<%# パスワード変更な気がする %>
+
+
+<div class="container-edit">
+  <div class="edit-box">
+    <h2 class="edit-title">アカウント編集</h2>
+    <div class="box-inner">
+      <%= form_with model:@user, url: user_registration_path, local: true do |f| %>
+        <%# <%= render "users/shared/error_messages", resource: resource %> 
+        <% if @user.errors.any? %>
+        <% end %>
+
+        <div class="edit-field">
+          <%= f.label :email, "メールアドレス" %><br>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
-        <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
 
-          <div class="update-content">
-          <%# 画像が登録されている時といない時の表示処理  %>
-            <% if @user.image.attached? %>
-              <%= image_tag @user.image, class: 'host-icon', alt: "ユーザー画像表示されていない" %>
-            <% else %>
-              <div class="host-box">
-                <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg', alt: "デフォ画像", class: 'host-icon' %>
-              </div>
-            <% end %>
-          </div>
+        <div class="edit-field">
+          <%= f.label :password, "変更後パスワード（変更する場合のみ入力）" %>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+          <% if @minimum_password_length %>
+          <% end %>
+        </div>
 
-            <%# 参考 %>
-            <%#@tops.each do |top|%>
-            <%# top.name%> 
-            <%#div class="box-icon"> %>
-              <%# image_tag top.image, class: 'host-icon' %> 
-            <%#/div> %>
-            <%#end %> 
+        <div class="edit-field">
+          <%= f.label :password_confirmation, "パスワード確認用（変更する場合のみ入力）" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
 
-          <div class="update-content">
-            <div class="column">
-              <label class="col-md-3 label" for="name">アイコン画像</label>
-              <p class="require-edit">必須</p>
-              <div class="col-md-9">
-                <%= f.file_field :image %>
-              </div>
-            </div>
-          </div>
-          <div class="update-content">
-            <div class="column">
-              <label class="col-md-3 label" for="name">名前</label>
-              <p class="require-edit">必須</p>
-              <div class="col-md-9">
-                <%= f.text_field:name %> 
-              </div>
-            </div>
-          </div>
-          <div class="update-content">
-            <div class="column">
-              <label class="col-md-3 label" for="password">自己紹介</label>
-              <p class="require-edit">必須</p>
-              <div class="col-md-9">                
-                <%= f.text_area:introduction,id: "introduction" %>
-              </div>
-            </div>
-          </div>
-          <div class="update-content">
-            <div class="column">
-              <%= f.submit '更新', class: "edit-btn" %>
-            </div>
-          </div>
-        <% end %>  
-      </div>
+        <div class="edit-field">
+          <%= f.label :current_password, "現在のパスワード" %><br>
+          <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "現在のパスワードを入力" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "更新", class: "update-btn" %>
+        </div>
+      <% end %>
+      <%= link_to "戻る", :back, class: "return-btn" %>
     </div>
   </div>
 </div>
-</div>
+
 <%= render 'shared/footer' %>
