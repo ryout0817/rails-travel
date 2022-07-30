@@ -1,0 +1,72 @@
+<%= render 'shared/header', user: @user %>
+  <div class="column">
+    <div class="user-nav user-navi-pc d-block">
+      <ul>
+        <li class="active"><%= link_to '基本情報', new_room_path %></li>
+      </ul>
+    </div>
+    <div class="col-md-10 acount-view">
+      <div class="acount-view-box">
+        <div class="update-content">
+          <div class="column">
+            <h5>ルーム情報登録</h5>
+          </div>
+        </div>
+        <%= form_with model: @room do |f| %>
+          <div class="update-content">            
+            <div class="column">
+              <%= f.label :room_name,"ルーム名",class: "col-md-3 label" %>
+              <p class="require-edit">必須</p>
+              <div class="col-md-9">
+                <%= f.text_field :room_name,placeholder: "ルーム名を入力" %>
+              </div>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="column">
+              <%= f.label :room_introduction,"ルーム紹介",class: "col-md-3 label" %>
+              <p class="require-edit">必須</p>
+              <div class="col-md-9">
+                <%= f.text_area :room_introduction,placeholder: "ルーム説明を入力",id: "introduction" %> 
+              </div>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="column">
+              <%= f.label :price,"料金",class: "col-md-3 label" %>
+              <p class="require-edit">必須</p>
+              <div class="col-md-9">                
+                <%= f.number_field :price,placeholder: "1日あたりの料金を入力",id: "price" %>
+              </div>
+            </div>
+          </div>
+          <div class="update-content">            
+            <div class="column">
+              <%= f.label :city,"住所",class: "col-md-3 label" %>
+              <p class="require-edit">必須</p>
+              <div class="col-md-9">
+                <%= f.text_field :city,placeholder: "住所を入力" %>
+              </div>
+            </div>
+          </div>
+          <%# <div class="update-content">            
+            <div class="column">
+              <%= f.label :room_name,"ルーム画像",class: "col-md-3 label" %>
+              <%# <p class="require-edit">必須</p>
+              <div class="col-md-9">
+                <%= f.file_field :room_name %>
+              <%# </div>
+            </div>
+          </div> %>
+          <div class="update-content"> 
+            <div class="column">
+              <%= f.submit '登録', class: "edit-btn" %>
+            </div>
+          </div>
+        <% end %>  
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<%= render 'shared/footer' %>

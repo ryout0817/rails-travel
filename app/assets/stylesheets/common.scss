@@ -1,0 +1,397 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.header_container {
+  background-color: #000000;
+  width: 100%;
+  position: relative;
+  height: 70px;
+}
+.header-logo {
+  padding-left: 20px;
+}
+.btn-header-login {
+  color: #ffffff;
+  background-color: #4a90e2;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.btn-header-new {
+  color: #ffffff;
+  background-color: #6c757d;
+  padding: 5px 10px;
+  margin: 0 15px 0 15px;
+  border-radius: 5px;
+}
+.header-navi {
+  display: flex;
+  float: right;
+  padding-top: 20px;
+}
+.top-main {
+  width: 100%;
+  height: 650px;
+  background-image: url(https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg);
+  background-size: cover;
+}
+.container-row {
+  height: 650px;
+  text-align: center;
+}
+.row-main-contents {
+  background-color: #ffffff;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+.container {
+  width: 100%;
+  margin: 0 auto 0 auto;
+}
+.view-title {
+  font-size: 24px;
+}
+.flex-view {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (min-width: 992px) {
+  .view-item {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+.view-item {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.view {
+  height: 360px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 5px 10px;
+}
+
+.footer {
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  justify-content: center;
+  display: flex;
+  padding: 45px 0;
+}
+
+.devise-container {
+  padding-top: 36px;
+}
+
+.form-box {
+  max-width: 600px;
+  text-align: center;
+  box-shadow: rgb(21, 27, 38 / 15%) 0px 1px 3px 0px;
+  margin: 20px auto 40px auto;
+}
+.box-row {
+  color: #6c757d;
+  font-size: 16px;
+  padding-top: 20px;
+}
+.form-container {
+  width: 360px;
+  margin: 0 auto;
+}
+
+.field {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+.require {
+  margin-right: 10px;
+  color: #ffffff;
+  background-color: #ff0000a8;
+  font-size: 5px;
+  padding: 4px;
+  border-radius: 5px;
+}
+// top/edit.htmlの時だけサイズが変わるため
+.require-edit {
+  margin-right: 10px;
+  color: #ffffff;
+  background-color: #ff0000a8;
+  font-size: 5px;
+  padding: 4px;
+  border-radius: 5px;
+  height: 30px;
+}
+.register-col {
+  width: 350px;
+  color: #ffffff;
+  background-color: #4a90e2;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+
+.path {
+  text-decoration: none;
+  color: #007bff !important;
+  margin-bottom: 10px;
+}
+
+// プロフィールアカウント画面
+// 左目次
+.column {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+a {
+  color: #000000;
+}
+a:hover {
+  color: #4a90e2;
+}
+a:active {
+  border-right: 3px solid #4a90e2;
+  color: #4a90e2;
+}
+
+li {
+  font-size: 18px;
+  padding: 10px;
+}
+// プロフィール構図
+.user-nav {
+  height: 100vh;
+}
+
+.user-navi-pc {
+  padding: 30px 15px;
+}
+
+@media (min-width: 992px) {
+  .d-block {
+    display: block;
+  }
+}
+// プロフィール表示欄
+.acount-view {
+  background-color: #f6f8f9;
+  border-left: 3px solid #e2e2e2;
+}
+// 枠の設定
+@media (min-width: 768px) {
+  .col-md-10 {
+    flex: 0 83.333333%;
+    max-width: 85%;
+  }
+}
+
+.acount-view-box {
+  max-width: 880px;
+  background-color: #ffffff;
+  border: 1px solid #eaedef;
+  margin: 30px auto;
+}
+// 表内
+h5 {
+  font-size: 20px;
+  margin: 0 0 5px 0;
+}
+.update-content {
+  border-bottom: 1px solid #eaedef;
+  padding: 20px;
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+.label {
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+// 編集ボタン
+.edit-btn {
+  color: #ffffff;
+  background-color: #4a90e2;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  padding: 10px 60px;
+  margin-left: 20px;
+}
+// 編集ページ
+.edit-title {
+  font-size: 32px;
+  font-weight: 500;
+}
+// フォーム編集
+.container-edit {
+  padding-top: 36px;
+}
+
+.edit-box {
+  max-width: 600px;
+  text-align: center;
+  margin: 20px auto;
+  padding: 24px;
+  background-color: #ffffff;
+  box-shadow: #e2e2e2 0px 1px 3px 0px;
+}
+.box-inner {
+  width: 360px;
+  margin: 10px auto;
+}
+
+.edit-field {
+  margin-bottom: 10px;
+}
+
+// フォームCSS
+input[type='text'] {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+input[type='email'] {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+input[type='password'] {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+// introductionフォーム id属性付与
+#introduction {
+  width: 350px;
+  height: 100px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+// price
+#price {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.update-btn {
+  width: 100%;
+  color: #ffffff;
+  background-color: #4a90e2;
+  padding: 10px 10px;
+  margin: 10px 0 30px 0;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+.return-btn {
+  padding: 10px 160px;
+  width: 100%;
+  color: #4a90e2;
+  border: 1px solid #6c757d;
+  border-radius: 5px;
+}
+// 編集画面のアイコン
+.host-icon {
+  height: 65px;
+  width: 65px;
+  border-radius: 50px;
+}
+
+.host-box {
+  text-align: center;
+}
+// ヘッダーの右側
+// ヘッダーのアイコン
+.header-right-nav {
+  float: right;
+  display: flex;
+}
+.header-host-name {
+  color: #ffffff;
+  font-size: 14px;
+  padding-top: 25px;
+}
+#header-icon {
+  height: 65px;
+  width: 65px;
+  border-radius: 50px;
+  padding: 10px;
+}
+
+// ヘッダークリック後のメニュー
+.dropdown__list {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  padding: 15px;
+  background-color: #ced4da;
+  display: none;
+}
+
+// 登録済みルーム一覧
+.roomlist-container {
+  max-width: 100vw;
+  padding: 30px 60px;
+}
+
+h2,
+h4,
+h5 {
+  font-weight: 500;
+}

@@ -1,0 +1,43 @@
+<%= render 'shared/header' , user: @user %>
+
+<div class="container-field">
+  <div class="column">
+    <div class="user-nav user-navi-pc d-block">
+      <ul>
+        <li class="active"><%= link_to 'アカウント', top_path(@user) %></li>
+        <li class="active"><%= link_to 'プロフィール', edit_user_registration_path(@user) %> </li>
+      </ul>
+    </div>
+    <div class="col-md-10 acount-view">
+      <div class="acount-view-box">
+        <div class="update-content">
+          <div class="column">
+            <h5>アカウント</h5>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="column">
+              <label class="col-md-3 label" for="email">メールアドレス</label>
+              <div class="col-md-9">
+                <%= @user.email%>
+              </div>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="column">
+              <label class="col-md-3 label" for="password">パスワード</label>
+              <div class="col-md-9">
+                <%= @user.password%>
+              </div>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="column">
+              <%= link_to "編集", edit_top_path(@user), class: "edit-btn" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'shared/footer' %>
