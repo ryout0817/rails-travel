@@ -49,15 +49,15 @@
               </div>
             </div>
           </div>
-          <%# <div class="update-content">            
+          <div class="update-content">            
             <div class="column">
-              <%= f.label :room_name,"ルーム画像",class: "col-md-3 label" %>
-              <%# <p class="require-edit">必須</p>
+              <%= f.label :room_image,"ルーム画像",class: "col-md-3 label" %>
+              <p class="require-edit">必須</p>
               <div class="col-md-9">
-                <%= f.file_field :room_name %>
-              <%# </div>
-            </div>
-          </div> %>
+                <%= f.file_field :room_image %>
+              </div>
+            </div> 
+          </div>
           <div class="update-content"> 
             <div class="column">
               <%= f.submit '登録', class: "edit-btn" %>

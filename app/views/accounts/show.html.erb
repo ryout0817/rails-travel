@@ -4,8 +4,8 @@
   <div class="column">
     <div class="user-nav user-navi-pc d-block">
       <ul>
-        <li class="active"><%= link_to 'アカウント', accounts_show_path(@user) %></li>
-        <li class="active"><%= link_to 'プロフィール', accounts_edit_path(@user) %> </li>
+        <li class="active"><%= link_to 'アカウント', account_path(@user) %></li>
+        <li class="active"><%= link_to 'プロフィール', edit_account_path(@user) %> </li>
       </ul>
     </div>
     <div class="col-md-10 acount-view">

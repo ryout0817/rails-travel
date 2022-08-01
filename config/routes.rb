@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  get 'accounts/show'
-  get 'accounts/edit'
   # rootで最初のページになるtop/indexを使わなくて良い
   root to: "tops#index"
   
   # トップアクションの基本7つがルーティングされる  
   resources :tops, only: [:index]
   resources :rooms
+  resources :accounts
   # devise_forはログイン周りに必要なものを準備するヘルパーメソッド
   devise_for :users, controllers: {
     registrations: 'users/registrations',
