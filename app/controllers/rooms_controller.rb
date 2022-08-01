@@ -18,15 +18,4 @@ class RoomsController < ApplicationController
     end
       
   end
-
-  def show
-    @user = current_user
-    @rooms = Room.find(params[:id])
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 end

@@ -1,13 +1,13 @@
 <header>
-  <div class="header_container">
+  <div class="header-container">
     <% if user_signed_in? %>
     <%# ログインしている時のロゴ画像 %>
       <%= link_to tops_path(user) do %> 
-        <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png", alt: "ロゴ画像", class: "Header-Logo"%>
+        <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png", alt: "ロゴ画像", class: "header-logo"%>
       <% end %>  
     <% else %>
       <%= link_to tops_path do %> 
-        <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png", alt: "ロゴ画像", class: "Header-Logo"%>
+        <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png", alt: "ロゴ画像", class: "header-logo"%>
       <% end %>  
     <% end %>
     
