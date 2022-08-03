@@ -1,12 +1,12 @@
 class CreateRooms < ActiveRecord::Migration[6.1]
   def change
     create_table :rooms do |t|
-      t.integer :user_id
+      t.references :user, null: false, foreign_key: true
       t.string :room_name
       t.string :room_introduction
       t.integer :price
       t.string :city
-      t.string :room_image
+      t.string :room_image      
 
       t.timestamps
     end

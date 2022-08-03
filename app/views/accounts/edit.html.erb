@@ -6,7 +6,7 @@
         <li class="active"><%= link_to 'プロフィール', edit_account_path %> </li>
       </ul>
     </div>
-    <div class="col-md-10 acount-view">
+    < class="col-md-10 acount-view">
       <div class="acount-view-box">
         <div class="update-content">
           <div class="column">
@@ -14,15 +14,14 @@
           </div>
         </div>
         <%= form_with model: @user, url: account_path(@user), local: true do |f| %>
-
           <div class="update-content">          
             <% if @user.image.attached? %>
-            <%# 画像が登録されている時処理  %>
+              <%# 画像が登録されている時処理  %>
               <div class="host-box">
-              <%= image_tag @user.image, class: 'host-icon', alt: "ユーザー画像表示されていない" %>
+                <%= image_tag @user.image, class: 'host-icon', alt: "ユーザー画像表示されていない" %>
               </div>
             <% else %>
-            <%# 画像が登録されていない時のデフォルト %>
+              <%# 画像が登録されていない時のデフォルト %>
               <div class="host-box">
                 <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg', alt: "デフォ画像", class: 'host-icon' %>
               </div>
@@ -64,6 +63,5 @@
       </div>
     </div>
   </div>
-</div>
 </div>
 <%= render 'shared/footer' %>

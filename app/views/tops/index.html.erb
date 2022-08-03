@@ -1,37 +1,37 @@
 <%= render 'shared/header', user: @user %>
-<div class="top">
-  <div class="top-main">
+  <div class="top">
+    <div class="top-main">
+      <div class="container">
+        <div class="container-row">
+          <div class="row-main-contents">
+            <p>Potepan Shareでまだ体験したことのない旅をしよう</p>
+            <p>エリア</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
     <div class="container">
-    <div class="container-row">
-      <div class="row-main-contents">
-        <p>Potepan Shareでまだ体験したことのない旅をしよう</p>
-        <p>エリア</p>
-        
+      <div class="secondary">
+        <h1 class="view-title">おすすめのエリア</h1>      
+        <%= link_to root_path do %>
+          <div class="flex-view">      
+            <div class="view-item">
+              <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg", alt: "スカイツリー", id: "view-tokyo",class: "view"%>
+            </div>
+            <div class="view-item">
+              <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg", alt:"大阪", id: "view-osaka", class: "view"%>
+            </div>
+            <div class="view-item">
+              <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg", alt:"京都", id: "view-kyoto", class: "view"%>
+            </div>
+            <div class="view-item">
+              <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg", alt:"札幌", id: "view-sapporo", class: "view"%>
+            </div>
+          </div>
+        <% end %>      
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="secondary">
-      <h1 class="view-title">おすすめのエリア</h1>      
-        <%= link_to root_path do %>
-        <div class="flex-view">      
-          <div class="view-item">
-            <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg", alt: "スカイツリー", id: "view-tokyo",class: "view"%>
-          </div>
-          <div class="view-item">
-            <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg", alt:"大阪", id: "view-osaka", class: "view"%>
-          </div>
-          <div class="view-item">
-            <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg", alt:"京都", id: "view-kyoto", class: "view"%>
-          </div>
-          <div class="view-item">
-            <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg", alt:"札幌", id: "view-sapporo", class: "view"%>
-          </div>
-        </div>
-        <% end %>
-      
-    </div>
-  </div>
-</div>
 
 <%= render 'shared/footer'%>

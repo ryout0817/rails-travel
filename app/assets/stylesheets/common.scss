@@ -1,6 +1,8 @@
 body {
+  min-height: 100vh;
+  position: relative; /*←相対位置*/
+  padding-bottom: 180px; /*←footerの高さ*/
   margin: 0;
-  padding: 0;
 }
 * {
   box-sizing: border-box;
@@ -103,11 +105,15 @@ a {
 
 .footer {
   width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 180px;
   background-color: #000000;
   color: #ffffff;
   justify-content: center;
-  display: flex;
-  padding: 45px 0;
+  text-align: center;
+  padding-top: 80px;
+  margin-top: 64px;
 }
 
 .devise-container {
@@ -155,6 +161,7 @@ a {
 }
 .register-col {
   width: 350px;
+  height: 40px;
   color: #ffffff;
   background-color: #4a90e2;
   border: 1px solid #ced4da;
@@ -211,13 +218,6 @@ li {
 .acount-view {
   background-color: #f6f8f9;
   border-left: 3px solid #e2e2e2;
-}
-// 枠の設定
-@media (min-width: 768px) {
-  .col-md-10 {
-    flex: 0 83.333333%;
-    max-width: 85%;
-  }
 }
 
 .acount-view-box {
@@ -281,53 +281,6 @@ h5 {
 
 .edit-field {
   margin-bottom: 10px;
-}
-
-// フォームCSS
-input[type='text'] {
-  width: 350px;
-  height: 40px;
-  font-size: 15px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  padding: 5px 10px;
-}
-
-input[type='email'] {
-  width: 350px;
-  height: 40px;
-  font-size: 15px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  padding: 5px 10px;
-}
-
-input[type='password'] {
-  width: 350px;
-  height: 40px;
-  font-size: 15px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  padding: 5px 10px;
-}
-// introductionフォーム id属性付与
-#introduction {
-  width: 350px;
-  height: 100px;
-  font-size: 15px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  padding: 5px 10px;
-}
-
-// price
-#price {
-  width: 350px;
-  height: 40px;
-  font-size: 15px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  padding: 5px 10px;
 }
 
 .update-btn {
@@ -413,6 +366,9 @@ input[type='password'] {
 .roomlist-container table tbody tr td {
   padding: 10px;
 }
+.roomlist-container table tbody tr:nth-of-type(2n) {
+  background-color: #eaedef;
+}
 // ルーム写真
 .room-picture {
   height: 140px;
@@ -420,6 +376,61 @@ input[type='password'] {
   object-fit: cover;
 }
 
+//ルーム予約情報入力ページ
+.room-show {
+  padding: 30px 0;
+}
+.room-show-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.room-show-picture {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+.room-show-manager {
+  display: flex;
+  align-items: center;
+}
+.room-show-icon {
+  padding: 10px;
+}
+.room-show-profile {
+  padding: 15px;
+}
+.room-show-profile-name {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 0;
+}
+.room-show-profile-city {
+  font-size: 14px;
+}
+.room-show-introduction {
+  font-size: 16px;
+  line-height: 30px;
+  padding: 30px 10px;
+  border-top: 1px solid #eaedef;
+  border-bottom: 1px solid #eaedef;
+  word-break: break-all;
+}
+// 日付入力欄
+.room-show-nav {
+  padding: 20px;
+  border: 1px solid #eaedef;
+}
+.room-show-form {
+  margin-bottom: 20px;
+}
+.room-show-date-select {
+  padding: 15px 0;
+}
+.room-show-date-select label {
+  letter-spacing: 2px;
+  font-size: 15px;
+}
 h2,
 h4,
 h5 {
@@ -441,4 +452,80 @@ td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 1.5;
+}
+@media (min-width: 768px) {
+  .col-md-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+@media (min-width: 768px) {
+  .col-md-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+}
+// 枠の設定
+@media (min-width: 768px) {
+  .col-md-10 {
+    flex: 0 83.333333%;
+    max-width: 85%;
+  }
+}
+// フォームCSS
+input[type='text'] {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+input[type='email'] {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+input[type='password'] {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+input[type='datetime-local'] {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+  color: #495057;
+}
+// introductionフォーム id属性付与
+#introduction {
+  width: 350px;
+  height: 100px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+// price
+#price {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
 }

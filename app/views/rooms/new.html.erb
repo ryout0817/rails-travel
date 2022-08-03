@@ -12,10 +12,10 @@
             <h5>ルーム情報登録</h5>
           </div>
         </div>
-        <%= form_with model: @room do |f| %>
+        <%= form_with model: @room, local: true do |f| %>
           <div class="update-content">            
             <div class="column">
-              <%= f.label :room_name,"ルーム名",class: "col-md-3 label" %>
+              <%= f.label :room_name,"ルーム名", class: "col-md-3 label" %>
               <p class="require-edit">必須</p>
               <div class="col-md-9">
                 <%= f.text_field :room_name,placeholder: "ルーム名を入力" %>
@@ -24,19 +24,19 @@
           </div>
           <div class="update-content">
             <div class="column">
-              <%= f.label :room_introduction,"ルーム紹介",class: "col-md-3 label" %>
+              <%= f.label :room_introduction,"ルーム紹介", class: "col-md-3 label" %>
               <p class="require-edit">必須</p>
               <div class="col-md-9">
-                <%= f.text_area :room_introduction,placeholder: "ルーム説明を入力",id: "introduction" %> 
+                <%= f.text_area :room_introduction, placeholder: "ルーム説明を入力",id: "introduction" %> 
               </div>
             </div>
           </div>
           <div class="update-content">
             <div class="column">
-              <%= f.label :price,"料金",class: "col-md-3 label" %>
+              <%= f.label :price,"料金", class: "col-md-3 label" %>
               <p class="require-edit">必須</p>
               <div class="col-md-9">                
-                <%= f.number_field :price,placeholder: "1日あたりの料金を入力",id: "price" %>
+                <%= f.number_field :price, placeholder: "1日あたりの料金を入力",id: "price" %>
               </div>
             </div>
           </div>
@@ -58,6 +58,7 @@
               </div>
             </div> 
           </div>
+          <%= f.hidden_field :user_id, value:@user.id %>
           <div class="update-content"> 
             <div class="column">
               <%= f.submit '登録', class: "edit-btn" %>
