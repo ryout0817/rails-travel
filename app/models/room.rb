@@ -1,5 +1,5 @@
 class Room < ApplicationRecord
-  belongs_to :user, optional: true  #optional: true = 外部キーのnilを許可する、コントローラーのsaveに必要だった
+  belongs_to :user #optional: true = 外部キーのnilを許可する、コントローラーのsaveに必要だった
   has_many :reservations
 
   has_one_attached :room_image #active strageと関連付けさせる

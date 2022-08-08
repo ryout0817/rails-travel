@@ -12,7 +12,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(params.require(:room).permit(:room_name, :room_introduction, :price, :city, :room_image, :user_id))
     if @room.save 
-      redirect_to @room
+      redirect_to room_path(@room.id)
     else
       render "new"
     end
@@ -21,7 +21,6 @@ class RoomsController < ApplicationController
 
   def show
       @user = current_user
-      @room = Room.where(id: params[:id])
-      
+      @room = Room.find(params[:id])
   end
 end

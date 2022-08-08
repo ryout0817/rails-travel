@@ -1,0 +1,47 @@
+<%= render "shared/header", user:@user%>
+
+<div class="container-field user">
+  <div class="column">
+    <div class="col-md-12 user-view">
+      <div class="user-view-box">
+        <div class="update-content">
+          <div class="column">
+            <%= label :room_name, "予約した部屋",class: "col-md-3"%>
+            <div class="col-md-9">
+              <%= @room.room_name%>
+            </div>
+          </div>
+        </div>
+
+        <div class="update-content">
+          <div class="column">
+            <%= label :start_day, "開始日",class: "col-md-3"%>
+            <div class="col-md-9">
+              <%= @reservation.start_day%>
+            </div>
+          </div>
+        </div>
+
+        <div class="update-content">
+          <div class="column">
+            <%= label :finish_day, "終了日",class: "col-md-3"%>
+            <div class="col-md-9">
+              <%= @reservation.finish_day%>
+            </div>
+          </div>
+        </div>
+
+        <div class="update-content">
+          <div class="column">
+            <%= label :total_amount, "価格",class: "col-md-3"%>
+            <div class="col-md-9">
+              <%= @reservation.total_amount%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

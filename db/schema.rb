@@ -44,16 +44,15 @@ ActiveRecord::Schema.define(version: 2022_08_01_150805) do
     t.date "start_day"
     t.date "finish_day"
     t.integer "people"
-    t.integer "user_id", null: false
-    t.integer "room_id", null: false
+    t.integer "user_id"
+    t.integer "room_id"
+    t.integer "total_amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["room_id"], name: "index_reservations_on_room_id"
-    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.string "room_name"
     t.string "room_introduction"
     t.integer "price"
@@ -61,7 +60,6 @@ ActiveRecord::Schema.define(version: 2022_08_01_150805) do
     t.string "room_image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -81,7 +79,4 @@ ActiveRecord::Schema.define(version: 2022_08_01_150805) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "reservations", "rooms"
-  add_foreign_key "reservations", "users"
-  add_foreign_key "rooms", "users"
 end

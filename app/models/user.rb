@@ -9,5 +9,5 @@ class User < ApplicationRecord
         
         # 一対多の一の部分
         has_many :rooms
-        has_many :tops
+        has_many :reservations
 end

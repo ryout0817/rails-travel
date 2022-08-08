@@ -19,7 +19,7 @@
         </div>
         <% if@user.image.attached? %>
           <div class="header-host-item">
-            <%= image_tag user.image, id: "header-icon", onclick: 'clickimage1()'%>
+            <%= image_tag @user.image, id: "header-icon", onclick: 'clickimage1()'%>
           </div>
         <% else %>
           <div class="header-host-item">

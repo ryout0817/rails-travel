@@ -4,9 +4,9 @@ class CreateReservations < ActiveRecord::Migration[6.1]
       t.date :start_day
       t.date :finish_day
       t.integer :people
-      t.references :user, null: false, foreign_key: true
-      t.references :room, null: false, foreign_key: true
-
+      t.integer :user_id
+      t.integer :room_id
+      t.integer :total_amount
       t.timestamps
     end
   end

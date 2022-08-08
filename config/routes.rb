@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   
   # トップアクションの基本7つがルーティングされる  
   resources :tops, only: [:index]
-  resources :rooms
-  resources :accounts
+  resources :rooms, only: [:index, :create, :new, :show]
+  post '/reservations/new(.:format)'
+  resources :accounts, only: [:show, :update, :edit]
   resources :reservations
   # devise_forはログイン周りに必要なものを準備するヘルパーメソッド
   devise_for :users, controllers: {

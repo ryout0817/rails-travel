@@ -1,0 +1,34 @@
+<%= render "shared/header", user:@user%>
+
+<div class="container reservations-new">
+  <div class="column">
+    <div class="col-md-6 offset-3">
+      <div class="reservations-new-nav">
+        <h4 class="reservations-new-check-content">予約内容確認</h4>   
+        
+          <h5 class="price-icon">¥<%= @room.price %>/日</h5>
+        
+        <div class="reservations-new-date-select">
+          <%= form_with model:@reservation do |f| %>
+            <%= f.hidden_field :user_id, value:@user.id %>
+            <%= f.hidden_field :room_id, value:@room.id %>
+            <%= f.label :start_day,"開始日" %>
+            <%= f.text_field :start_day, :readonly => true, class:"form-controll mb-4"%><br>
+            <%= f.label :finish_day,"終了日" %>
+            <%= f.text_field :finish_day, :readonly => true, class:"form-controll mb-4"%>
+            <h6 class="reservations-new-check-content">使用日数：<%= @days%>日</h6>
+            <h6 class="reservations-new-check-content">人数：<%= @reservation.people%>人</h6>
+            <%= f.label :total_amount,"合計金額" %>
+            <%= f.text_field :total_amount, value:@prices, :readonly => true %>
+            <p class="reservations-new-check-content">上記内容でよろしければ「予約を確定」を押してください</p>
+            <%= f.submit "予約を確定", class:"register-col my-3" %>
+            <%= link_to "ルーム詳細に戻る", room_path(@user) %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%= render "shared/footer" %>

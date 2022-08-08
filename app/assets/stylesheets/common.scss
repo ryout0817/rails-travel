@@ -431,10 +431,73 @@ h5 {
   letter-spacing: 2px;
   font-size: 15px;
 }
+
+// 予約登録画面
+.reservations-new {
+  padding: 30px 0;
+}
+.reservations-new-nav {
+  border: 1px solid #ced4da;
+  padding: 20px;
+}
+.reservations-new-check-content {
+  border-bottom: 1px solid #6c757d;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+.form-control[readonly] {
+  background-color: #e9ecef;
+  opacity: 1;
+}
+
+// 予約確認画面
+.user {
+  width: 100%;
+}
+.user-view {
+  background-color: #f6f8f9;
+  border-left: 2px solid #e2e2e2;
+}
+.user-view-box {
+  background-color: #ffffff;
+  max-width: 880px;
+  border: 1px solid #eaedef;
+  margin: 30px auto;
+}
+.update-content {
+  border-bottom: 1px solid #eaedef;
+  padding: 20px;
+  margin: 0 15px;
+  font-size: 16px;
+}
+.update-content label {
+  font-weight: bold;
+}
+// 予約済みルーム一覧
+
+.pb-4 {
+  padding-bottom: 1.5rem;
+}
+.my-3 {
+  margin: 1.5rem 0;
+}
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1rem;
+}
 h2,
 h4,
 h5 {
   font-weight: 500;
+  line-height: 1.2;
 }
 
 .row-1 {
@@ -453,12 +516,27 @@ td {
   font-size: 13px;
   line-height: 1.5;
 }
+
+.offset-3 {
+  margin-left: 25%;
+}
+@media (min-width: 768px) {
+  .col-md-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
 @media (min-width: 768px) {
   .col-md-4 {
     -ms-flex: 0 0 33.333333%;
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
   }
+}
+.col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
 }
 @media (min-width: 768px) {
   .col-md-8 {
@@ -467,11 +545,24 @@ td {
     max-width: 66.666667%;
   }
 }
+@media (min-width: 768px) {
+  .col-md-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+}
 // 枠の設定
 @media (min-width: 768px) {
   .col-md-10 {
     flex: 0 83.333333%;
     max-width: 85%;
+  }
+}
+@media (min-width: 768px) {
+  .col-md-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 // フォームCSS
@@ -501,7 +592,7 @@ input[type='password'] {
   border-radius: 4px;
   padding: 5px 10px;
 }
-input[type='datetime-local'] {
+input[type='number'] {
   width: 350px;
   height: 40px;
   font-size: 15px;
@@ -510,6 +601,16 @@ input[type='datetime-local'] {
   padding: 5px 10px;
   color: #495057;
 }
+input[type='date'] {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+  color: #495057;
+}
+
 // introductionフォーム id属性付与
 #introduction {
   width: 350px;
