@@ -55,7 +55,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# デバイス機能導入
 gem 'devise'
 
 # 画像に処理を加えることができるソフトウェアのbrew install imagemagickインストール後
@@ -68,5 +67,6 @@ gem 'carrierwave'
 
 gem 'rails-i18n'
 
-# デバッグをする機能追加
 gem 'pry-rails'
+
+gem 'ransack'

@@ -23,4 +23,8 @@ class RoomsController < ApplicationController
       @user = current_user
       @room = Room.find(params[:id])
   end
+
+  def search
+    
+  end
 end

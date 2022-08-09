@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   
   # トップアクションの基本7つがルーティングされる  
   resources :tops, only: [:index]
-  resources :rooms, only: [:index, :create, :new, :show]
+  resources :rooms, only: [:index, :create, :new, :show] do
+    collection do
+      get "search"
+    end
+  end
   post '/reservations/new(.:format)'
   resources :accounts, only: [:show, :update, :edit]
   resources :reservations

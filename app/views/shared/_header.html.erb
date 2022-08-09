@@ -28,7 +28,7 @@
         <% end %>
         <ul class="dropdown__list" id="list">
           <li class="dropdown__item"><%= link_to "ルーム登録", new_room_path(user) %></li>
-          <%# <li class="dropdown__item"><%= link_to "予約済みルーム一覧", edit_top_path(user) ルーム登録できてから%>
+          <li class="dropdown__item"><%= link_to "予約済みルーム一覧", reservations_path%></li>
           <li class="dropdown__item"><%= link_to "登録済みルーム一覧", rooms_path(user) %></li>
           <li class="dropdown__item"><%= link_to "設定", account_path(user) %></li>        
           <li class="driodown__item"><%= link_to 'ログアウト', destroy_user_session_path, class: 'down-item', method: :delete %></li><%# < class="dropdown__item"><%= link_to "ログアウト", top_path(@user) %>
