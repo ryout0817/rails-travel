@@ -6,12 +6,14 @@
         <%= link_to tops_path(user) do %> 
           <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png", alt: "ロゴ画像"%>
         <% end %>
+        <%# サーチフォーム %>
         <%= search_form_for @q, url: search_rooms_path do |f|%>          
           <%= f.search_field :city_cont, placeholder: "エリア名", class:"form-control" %>
           <%= f.search_field :room_name_or_price_or_city_or_room_introduction_cont, placeholder: "キーワード", class:"form-control" %>
           <%= f.submit "", class:"search-submit"%>
         <% end %>
       <% else %>
+      <%# ログインしていないときロゴのみ表示 %>
         <%= link_to tops_path do %> 
           <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png", alt: "ロゴ画像"%>
         <% end %>  

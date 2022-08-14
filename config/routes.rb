@@ -5,13 +5,14 @@ Rails.application.routes.draw do
   # トップアクションの基本7つがルーティングされる  
   resources :tops, only: [:index]
   resources :rooms, only: [:index, :create, :new, :show] do
+  # サーチviewのルート追加
     collection do
       get "search"
     end
   end
   post '/reservations/new(.:format)'
   resources :accounts, only: [:show, :update, :edit]
-  resources :reservations
+  resources :reservations, only: [:index, :new, :create, :show]
   # devise_forはログイン周りに必要なものを準備するヘルパーメソッド
   devise_for :users, controllers: {
     registrations: 'users/registrations',

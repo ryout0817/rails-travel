@@ -31,7 +31,8 @@
           <h5 class="price-icon">¥<%= @room.price%>/ 日</h5>
       
         <div class="room-show-date-select">
-          <%= form_with url:new_reservation_path, local: true do |f| %>
+        <%# フォームの中のデータを送信 %>
+          <%= form_with url:new_reservation_path, local: true do |f| %> 
             <%= f.label :start_day,"開始日"%>
             <%= f.date_field :start_day, class: "room-show-form" %>
             <%= f.label :finish_day,"終了日"%>

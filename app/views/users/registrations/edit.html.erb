@@ -1,13 +1,8 @@
-
-<%# パスワード変更な気がする %>
-
-
 <div class="container-edit">
   <div class="edit-box">
     <h2 class="edit-title">アカウント編集</h2>
     <div class="box-inner">
       <%= form_with model:@user, url: user_registration_path, local: true do |f| %>
-        <%# <%= render "users/shared/error_messages", resource: resource %> 
         <% if @user.errors.any? %>
         <% end %>
 
