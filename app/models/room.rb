@@ -5,9 +5,9 @@ class Room < ApplicationRecord
   has_one_attached :room_image #active strageと関連付けさせる
 
   # バリデーション
-  # validates :room_name, presence :true
-  # validates :room_introduction, presence :true
-  # validates :price, numericality :true, presence :true
-  # validates :city, presence :true
-  # validates :room_image, presence :true
+  validates :room_name, presence: true
+  validates :room_introduction, presence: true
+  validates :price, numericality: true, presence: true
+  validates :city, presence: true
+  validates :room_image, presence: true
 end

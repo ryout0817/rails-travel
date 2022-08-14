@@ -2,11 +2,12 @@ class RoomsController < ApplicationController
   def index
     @user = current_user
     @rooms = Room.where(user_id:@user.id) #個人で登録したルームを見るのに必要
+
   end
 
   def new
     @user = current_user
-    @room = Room.new  
+    @room = Room.new
   end
 
   def create
@@ -22,9 +23,5 @@ class RoomsController < ApplicationController
   def show
       @user = current_user
       @room = Room.find(params[:id])
-  end
-
-  def search
-    
   end
 end

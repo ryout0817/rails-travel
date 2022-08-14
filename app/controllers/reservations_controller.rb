@@ -1,7 +1,6 @@
 class ReservationsController < ApplicationController
   def index
     @user = current_user
-    
     @reservations = Reservation.all
     
   end
@@ -20,7 +19,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to reservation_path(@reservation.id)
     else
-      render "rooms"
+      render "new"
     end
   end
 

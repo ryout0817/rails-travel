@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?     
   before_action :configure_account_update_parameters, if: :devise_controller? #編集機能について
-      
+  before_action :search
+
 private  
 
 def configure_permitted_parameters  
@@ -12,12 +13,14 @@ def configure_account_update_parameters
   devise_parameter_sanitizer.permit(:account_update,keys:[:name, :introduction, :image]) #updateで許すUserモデルのカラムだと思う
 end
 
-# imageという画像を保存する許可
-#private  #private = クラスの外からは呼び出せない
+def search
+  @user = current_user
+  @q = Room.ransack(params[:q])
+  @results = @q.result
+  @count = @results.count
+end
 
-#def test_params
-#  params.require(:post).permit(:text, :image)
-#end
+
 end  
 
   

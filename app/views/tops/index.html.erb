@@ -2,10 +2,16 @@
   <div class="top">
     <div class="top-main">
       <div class="container">
-        <div class="container-row">
-          <div class="row-main-contents">
-            <p>Potepan Shareでまだ体験したことのない旅をしよう</p>
-            <p>エリア</p>
+        <div class="column col-lg-6">
+          <div class="form-fream">
+            <div class="form-area">           
+              <p class="form-area-title">Potepan Shareでまだ体験したことのない旅をしよう</p>
+              <%= search_form_for @q, url: search_rooms_path do |f|%>
+                <%= f.label "地名"%>
+                <%= f.search_field :city_cont, placeholder: "エリア名", class:"form-area-controll"%>
+                <%= f.submit "探す", class:"form-area-controll form-submit"%>
+              <% end %>
+            </div> 
           </div>
         </div>
       </div>

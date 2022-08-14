@@ -1,5 +1,4 @@
-<%= render 'shared/header' , user: @user %>
-
+<%= render "shared/header", user:@user%>
 <div class="container-field">
   <div class="column">
     <div class="user-nav user-navi-pc d-block">
@@ -27,7 +26,7 @@
           <div class="column">
               <label class="col-md-3 label" for="password">パスワード</label>
               <div class="col-md-9">
-                <%= @user.password%>
+                <%= @user.password%>            <%#パスワードの＊の表示の仕方がわかりませんでした。%>
               </div>
           </div>
         </div>
