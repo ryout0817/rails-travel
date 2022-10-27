@@ -1,0 +1,71 @@
+<header>
+  <div class="header-inner">
+    <div class="header-left-nav">
+      <% if user_signed_in? %>
+        <%# ログインしている時のロゴ画像 %>
+        <%= link_to tops_path(user) do %> 
+          <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png", alt: "ロゴ画像"%>
+        <% end %>
+        <%# サーチフォーム %>
+        <%= search_form_for @q, url: search_rooms_path do |f|%>          
+          <%= f.search_field :city_cont, placeholder: "エリア名", class:"form-control" %>
+          <%= f.search_field :room_name_or_price_or_city_or_room_introduction_cont, placeholder: "キーワード", class:"form-control" %>
+          <%= f.submit "", class:"search-submit"%>
+        <% end %>
+      <% else %>
+      <%# ログインしていないときロゴのみ表示 %>
+        <%= link_to tops_path do %> 
+          <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png", alt: "ロゴ画像"%>
+        <% end %>  
+      <% end %>
+    </div>
+    <% if user_signed_in? %>
+      <!-- ログインしている処理 -->      
+      <div class="header-right-nav">
+        <div class="header-host-name">
+          <%= user.name %>
+        </div>
+        <% if@user.image.attached? %>
+          <div class="header-host-item">
+            <%= image_tag @user.image, id: "header-icon", onclick: 'clickimage1()'%>
+          </div>
+        <% else %>
+          <div class="header-host-item">
+            <%= image_tag 'https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg', alt: "デフォ画像", id: "header-icon", onclick: 'clickimage1()' %>
+          </div>
+        <% end %>
+        <ul class="dropdown__list" id="list">
+          <li class="dropdown__item"><%= link_to "ルーム登録", new_room_path(user) %></li>
+          <li class="dropdown__item"><%= link_to "予約済みルーム一覧", reservations_path%></li>
+          <li class="dropdown__item"><%= link_to "登録済みルーム一覧", rooms_path(user) %></li>
+          <li class="dropdown__item"><%= link_to "設定", account_path(user) %></li>        
+          <li class="driodown__item"><%= link_to 'ログアウト', destroy_user_session_path, class: 'down-item', method: :delete %></li><%# <div class="dropdown__item"><%= link_to "ログアウト", top_path(@user) %>
+        </ul>
+      </div>
+      <% else %>
+        <%# ログインしていない処理 %>
+        <div class="header-navi">
+          <%= button_to"ログイン", new_user_session_path, {method: :get, class: "btn-header-login"} %>
+          <%= button_to "登録する", new_user_registration_path, {method: :get, class: "btn-header-new" }%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</header>
+
+<script>
+document.getElementById('list').style.display = "none";
+  
+
+  const icon = document.getElementById ('header-icon');
+function clickimage1() {
+  const list = document.getElementById ('list');
+
+  if(list.style.display == "block") {
+
+  list.style.display = "none";
+  }else {
+    list.style.display = "block"
+  } 
+}
+</script>

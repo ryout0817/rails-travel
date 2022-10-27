@@ -1,0 +1,793 @@
+body {
+  min-height: 100vh;
+  position: relative; /*←相対位置*/
+  padding-bottom: 180px; /*←footerの高さ*/
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+// ヘッダー
+header {
+  background-color: #000000;
+  width: 100%;
+  position: relative;
+  height: 70px;
+}
+// ヘッダー左側
+.header-left-nav {
+  float: left;
+}
+.header-left-nav form {
+  display: inline;
+}
+.header-left-nav .form-control {
+  width: 180px;
+  height: 35px;
+  font-size: 1rem;
+  display: inline-block;
+  position: relative;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+.btn-header-login {
+  color: #ffffff;
+  background-color: #4a90e2;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.btn-header-new {
+  color: #ffffff;
+  background-color: #6c757d;
+  padding: 5px 10px;
+  margin: 0 15px 0 15px;
+  border-radius: 5px;
+}
+.header-navi {
+  display: flex;
+  float: right;
+  padding-top: 20px;
+}
+.search-submit {
+  display: none;
+}
+// トップ画面
+.top-main {
+  width: 100%;
+  height: 650px;
+  background-image: url(https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg);
+  background-size: cover;
+}
+.row-main-contents {
+  background-color: #ffffff;
+}
+.form-fream {
+  height: 650px;
+  display: flex;
+  align-items: center;
+}
+.form-area {
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 5px;
+}
+.form-area-title {
+  font-size: 28px;
+  line-height: 33px;
+  letter-spacing: 1px;
+}
+.form-area-controll {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding-left: 10px;
+}
+.form-submit {
+  color: #fff;
+  background-color: #4a90e2;
+  margin-top: 20px;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+.container {
+  width: 100%;
+  margin: 0 auto 0 auto;
+}
+.view-title {
+  font-size: 24px;
+}
+.flex-view {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (min-width: 992px) {
+  .view-item {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+.view-item {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.view {
+  height: 360px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 5px 10px;
+}
+
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 180px;
+  background-color: #000000;
+  color: #ffffff;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+  margin-top: 64px;
+}
+
+.devise-container {
+  padding-top: 36px;
+}
+
+.form-box {
+  max-width: 600px;
+  text-align: center;
+  box-shadow: rgb(21, 27, 38 / 15%) 0px 1px 3px 0px;
+  margin: 20px auto 40px auto;
+}
+.box-row {
+  color: #6c757d;
+  font-size: 16px;
+  padding-top: 20px;
+}
+.form-container {
+  width: 360px;
+  margin: 0 auto;
+}
+
+.field {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+.require {
+  margin-right: 10px;
+  color: #ffffff;
+  background-color: #ff0000a8;
+  font-size: 5px;
+  padding: 4px;
+  border-radius: 5px;
+}
+// top/edit.htmlの時だけサイズが変わるため
+.require-edit {
+  margin-right: 10px;
+  color: #ffffff;
+  background-color: #ff0000a8;
+  font-size: 5px;
+  padding: 4px;
+  border-radius: 5px;
+  height: 30px;
+}
+.register-col {
+  width: 350px;
+  height: 40px;
+  color: #ffffff;
+  background-color: #4a90e2;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+
+.path {
+  text-decoration: none;
+  color: #007bff !important;
+  margin-bottom: 10px;
+}
+
+// プロフィールアカウント画面
+// 左目次
+.column {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+a {
+  color: #000000;
+}
+a:hover {
+  color: #4a90e2;
+}
+a:active {
+  border-right: 3px solid #4a90e2;
+  color: #4a90e2;
+}
+
+li {
+  font-size: 18px;
+  padding: 10px;
+}
+// プロフィール構図
+.user-nav {
+  height: 100vh;
+}
+
+.user-navi-pc {
+  padding: 30px 15px;
+}
+
+@media (min-width: 992px) {
+  .d-block {
+    display: block;
+  }
+}
+// プロフィール表示欄
+.acount-view {
+  background-color: #f6f8f9;
+  border-left: 3px solid #e2e2e2;
+}
+
+.acount-view-box {
+  max-width: 880px;
+  background-color: #ffffff;
+  border: 1px solid #eaedef;
+  margin: 30px auto;
+}
+// 表内
+h5 {
+  font-size: 20px;
+  margin: 0 0 5px 0;
+}
+.update-content {
+  border-bottom: 1px solid #eaedef;
+  padding: 20px;
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+.label {
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+// 編集ボタン
+.edit-btn {
+  color: #ffffff;
+  background-color: #4a90e2;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  padding: 10px 60px;
+  margin-left: 20px;
+}
+// 編集ページ
+.edit-title {
+  font-size: 32px;
+  font-weight: 500;
+}
+// フォーム編集
+.container-edit {
+  padding-top: 36px;
+}
+
+.edit-box {
+  max-width: 600px;
+  text-align: center;
+  margin: 20px auto;
+  padding: 24px;
+  background-color: #ffffff;
+  box-shadow: #e2e2e2 0px 1px 3px 0px;
+}
+.box-inner {
+  width: 360px;
+  margin: 10px auto;
+}
+
+.edit-field {
+  margin-bottom: 10px;
+}
+
+.update-btn {
+  width: 100%;
+  color: #ffffff;
+  background-color: #4a90e2;
+  padding: 10px 10px;
+  margin: 10px 0 30px 0;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+.return-btn {
+  padding: 10px 160px;
+  width: 100%;
+  color: #4a90e2;
+  border: 1px solid #6c757d;
+  border-radius: 5px;
+}
+// 編集画面のアイコン
+.host-icon {
+  height: 65px;
+  width: 65px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
+.host-box {
+  text-align: center;
+}
+// ヘッダーの右側
+// ヘッダーのアイコン
+.header-right-nav {
+  float: right;
+  display: flex;
+}
+.header-host-name {
+  color: #ffffff;
+  font-size: 14px;
+  padding-top: 25px;
+}
+#header-icon {
+  height: 65px;
+  width: 65px;
+  border-radius: 50px;
+  padding: 10px;
+  object-fit: cover;
+  margin-right: 30px;
+}
+
+// ヘッダークリック後のメニュー
+.dropdown__list {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  padding: 15px;
+  background-color: #ced4da;
+  display: none;
+}
+
+// 登録済みルーム一覧
+.roomlist-container {
+  max-width: 100vw; //vwはブラウザの幅  1vwは100/1
+  padding: 10px 60px;
+}
+
+.roomlist-container table {
+  min-width: 800px;
+}
+.roomlist-container table thead tr {
+  border-top: 1px solid #eaedef;
+  border-bottom: 1px solid #eaedef;
+  padding: 10px 10px;
+}
+.roomlist-container table thead tr th {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  padding: 8px 15px;
+}
+
+.roomlist-container table tbody tr {
+  border-bottom: 1px solid #eaedef;
+}
+.roomlist-container table tbody tr td {
+  padding: 10px;
+}
+.roomlist-container table tbody tr:nth-of-type(2n) {
+  background-color: #eaedef;
+}
+// ルーム写真
+.room-picture {
+  height: 140px;
+  width: 240px;
+  object-fit: cover;
+}
+
+//ルーム予約情報入力ページ
+.room-show {
+  padding: 30px 0;
+}
+.room-show-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.room-show-picture {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+.room-show-manager {
+  display: flex;
+  align-items: center;
+}
+.room-show-icon {
+  padding: 10px;
+}
+.room-show-profile {
+  padding: 15px;
+}
+.room-show-profile-name {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 0;
+}
+.room-show-profile-city {
+  font-size: 14px;
+}
+.room-show-introduction {
+  font-size: 16px;
+  line-height: 30px;
+  padding: 30px 10px;
+  border-top: 1px solid #eaedef;
+  border-bottom: 1px solid #eaedef;
+  word-break: break-all;
+}
+// 日付入力欄
+.room-show-nav {
+  padding: 20px;
+  border: 1px solid #eaedef;
+}
+.room-show-form {
+  margin-bottom: 20px;
+}
+.room-show-date-select {
+  padding: 15px 0;
+}
+.room-show-date-select label {
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+
+// 予約登録画面
+.reservations-new {
+  padding: 30px 0;
+}
+.reservations-new-nav {
+  border: 1px solid #ced4da;
+  padding: 20px;
+}
+.reservations-new-check-content {
+  border-bottom: 1px solid #6c757d;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+.form-control[readonly] {
+  background-color: #e9ecef;
+  opacity: 1;
+}
+
+// 予約確認画面
+.user {
+  width: 100%;
+}
+.user-view {
+  background-color: #f6f8f9;
+  border-left: 2px solid #e2e2e2;
+}
+.user-view-box {
+  background-color: #ffffff;
+  max-width: 880px;
+  border: 1px solid #eaedef;
+  margin: 30px auto;
+}
+.update-content {
+  border-bottom: 1px solid #c0c0c0;
+  padding: 20px;
+  margin: 0 15px;
+  font-size: 16px;
+}
+.update-content label {
+  font-weight: bold;
+}
+// 予約済みルーム一覧
+.reservations-index {
+  max-width: 100vw;
+  padding: 30px 60px;
+}
+.reservations-index table {
+  min-width: 800px;
+}
+.reservations-index table thead tr th {
+  padding: 8px 15px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.reservations-index table tbody tr {
+  border-bottom: 1px solid #c0c0c0;
+}
+.reservations-index table tbody tr td {
+  padding: 10px;
+}
+.link_room_name {
+  font-size: 1.3rem;
+  color: #4a90e2;
+  text-decoration: underline;
+}
+// 検索結果ページ
+.room {
+  width: 100%;
+  padding: 30px 60px;
+}
+.room-frame-inner {
+  border: 1px solid #e2e2e2;
+  margin-bottom: 10px;
+}
+.room-frame-inner a {
+  color: #000000;
+}
+.room-image-out {
+  position: relative;
+  width: 100%;
+  background-color: red;
+  height: 200px;
+  object-fit: cover;
+}
+.room-search-picture {
+  width: 100%;
+  height: 180px;
+  position: absolute;
+  top: 20px;
+}
+.room-profile p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 10px;
+  padding: 0;
+  margin: 0 0 0 15px;
+}
+.font-weight {
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  margin: 0 15px 0 0 !important;
+}
+.room-profile-name {
+  text-align: right;
+  color: #909090;
+}
+.room-profile-city {
+  text-align: right;
+}
+.room-profile-price {
+  text-align: right;
+}
+.col-sm-6 {
+  position: relative;
+  width: 100%;
+  padding: 0 15px 0 15px;
+}
+@media (min-width: 576px) {
+  .col-sm-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 15px 0 15px;
+  }
+}
+@media (min-width: 992px) {
+  .col-lg-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding: 0 15px 0 15px;
+  }
+}
+@media (min-width: 1200px) {
+  .col-xl-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0 15px 0 15px;
+  }
+}
+
+// 全部に効くCSS
+.pb-4 {
+  padding-bottom: 1.5rem;
+}
+.my-3 {
+  margin: 1.5rem 0;
+}
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1rem;
+}
+h2,
+h4,
+h5 {
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.row-1 {
+  padding-bottom: 15px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+label {
+  display: block;
+}
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+body,
+p,
+ul,
+td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.offset-3 {
+  margin-left: 25%;
+}
+@media (min-width: 768px) {
+  .col-md-3 {
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+@media (min-width: 768px) {
+  .col-md-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+.col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+@media (min-width: 992px) {
+  .col-lg-6 {
+    flex: 0 0 50px;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+}
+@media (min-width: 768px) {
+  .col-md-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+}
+// 枠の設定
+@media (min-width: 768px) {
+  .col-md-10 {
+    flex: 0 83.333333%;
+    max-width: 85%;
+  }
+}
+@media (min-width: 768px) {
+  .col-md-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+// フォームCSS
+input[type='text'] {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+input[type='email'] {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+input[type='password'] {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+input[type='number'] {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+  color: #495057;
+}
+input[type='date'] {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+  color: #495057;
+}
+
+// introductionフォーム id属性付与
+#introduction {
+  width: 350px;
+  height: 100px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+// price
+#price {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
